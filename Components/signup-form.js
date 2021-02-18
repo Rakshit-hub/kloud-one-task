@@ -1,5 +1,6 @@
 import React from "react";
 import _JSXStyle from "styled-jsx/style";
+
 class Registration extends React.Component {
   constructor() {
     super();
@@ -20,7 +21,9 @@ class Registration extends React.Component {
       email: this.state.email,
       password: this.state.password,
     };
+    alert("You submitted form sucessfully")
     console.log(formData);
+    
   }
   handleNameChange(e) {
     const name = e.target.value;
@@ -36,51 +39,62 @@ class Registration extends React.Component {
   }
 
   render() {
+    const { mode } = this.props;
     return (
-      <div>
-        {/* <h2>Register With Us</h2> */}
-       
-        <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <label>
-            Name
-            <input
-              type="text"
-              value={this.state.name}
-              onChange={this.handleNameChange}
-              className="form-control"
-            />
-          </label>
-          <br />
-
-          <label>
-            Email
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.handleEmailChange}
-              className="form-control"
-            />
-          </label>
-          <br />
-
-          <label>
-            password
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handlePasswordChange}
-              className="form-control"
-            />
-          </label>
-          <br />
+      <>
+        <div className="row mx-0 ">
+          <div className="col-6">
+            {mode ? (
+              <img src="/Images/white-mode1.jpg" width="200" height="300" />
+              
+            ) : (
+              <img src="/Images/white-mode.png" width="200" />
+            )}
           </div>
-          <input className="btn btn-primary" type="submit" />
-          
-        </form>
-      </div>
+          <div className="col-6">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                <label className="w-100">
+                  Name
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.handleNameChange}
+                    className="form-control"
+                  />
+                </label>
+                <br />
+
+                <label className="w-100">
+                  Email
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.handleEmailChange}
+                    className="form-control"
+                  />
+                </label>
+                <br />
+
+                <label className="w-100">
+                  password
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.handlePasswordChange}
+                    className="form-control"
+                  />
+                </label>
+                <br />
+              </div>
+              <input className="btn btn-primary" type="submit" />
+            </form>
+          </div>
+        </div>
+        <style jsx>{``}</style>
+      </>
     );
   }
 }
 
-export default Registration
+export default Registration;

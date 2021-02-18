@@ -2,9 +2,10 @@ import React from "react";
 import _JSXStyle from "styled-jsx/style";
 import Router from "next/router";
 import SignUP from "../Components/signup";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Calender extends React.Component {
-  state = { open: false };
+  state = { open: false, mode: false };
   componentDidMount() {}
 
   handleClickOpen = () => {
@@ -14,14 +15,29 @@ class Calender extends React.Component {
   handleClose = () => {
     this.setState({ open: false });
   };
+  handleToggle = () => {
+    this.setState({ mode: !this.state.mode });
+  };
   render() {
+    const { mode } = this.state;
     return (
       <>
-        <div className="col-12 bg">
-          {/* <div className="col-12">
-          <h1>LUCY</h1>
-        </div> */}
-          <div className="row align-items-center justify-content-center bg">
+        <div className={`col-12 overflow-hidden ${mode ? "darkMode" : "bg"}`}>
+          <div className="row pt-4 align-items-center justify-content-between">
+            <div className="Col-10">
+              <h1 className="pl-4">LUCY</h1>
+            </div>
+            <div className="col-2 ">
+              <button className="btn btn-primary" onClick={this.handleToggle}>
+                {`${mode ? "Toggle Mode" : "Dark Mode"}`}
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="row align-items-center justify-content-center "
+            style={{ height: "100vh" }}
+          >
             <div className="col-6">
               <img src="/Images/img-2.png" />
             </div>
@@ -53,6 +69,7 @@ class Calender extends React.Component {
           open={this.state.open}
           handleClickOpen={this.handleClickOpen}
           handleClose={this.handleClose}
+          mode={this.state.mode}
         />
         <style jsx>{`
           .bg {
@@ -63,6 +80,11 @@ class Calender extends React.Component {
             background: #56369c;
             color: #fff;
             font-weight: bold;
+          }
+          .darkMode {
+            background: black;
+            color: white;
+            height: 100vh;
           }
         `}</style>
       </>
