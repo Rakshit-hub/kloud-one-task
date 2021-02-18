@@ -1,0 +1,20 @@
+{
+  "name": "calender-task",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "next": "10.0.6",
+    "react": "17.0.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "17.0.1",
+    "react-infinite-calendar": "^2.3.1"
+  }
+}
