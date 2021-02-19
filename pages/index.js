@@ -29,7 +29,7 @@ class Calender extends React.Component {
             </div>
             <div className="col-2 ">
               <button className="btn btn-primary custBtn" onClick={this.handleToggle}>
-                {`${mode ? "Toggle Mode" : "Dark Mode"}`}
+                {`${mode ? "Light Mode" : "Dark Mode"}`}
               </button>
             </div>
           </div>
@@ -86,7 +86,7 @@ class Calender extends React.Component {
             color: white;
             
           }
-          @media only screen and (min-width: 414px) and (max-width: 992px) {
+          @media only screen and (min-width: 360px) and (max-width: 992px) {
             .mobileImg{
               width:350px;
             }
