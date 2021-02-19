@@ -22,13 +22,13 @@ class Calender extends React.Component {
     const { mode } = this.state;
     return (
       <>
-        <div className={`col-12 overflow-hidden ${mode ? "darkMode" : "bg"}`}>
-          <div className="row pt-4 align-items-center justify-content-between">
+        <div className={`col-12  ${mode ? "darkMode" : "bg"}`}>
+          <div className="row mr-0 pt-4 align-items-center justify-content-between">
             <div className="Col-10">
               <h1 className="pl-4">LUCY</h1>
             </div>
             <div className="col-2 ">
-              <button className="btn btn-primary" onClick={this.handleToggle}>
+              <button className="btn btn-primary custBtn" onClick={this.handleToggle}>
                 {`${mode ? "Toggle Mode" : "Dark Mode"}`}
               </button>
             </div>
@@ -38,10 +38,10 @@ class Calender extends React.Component {
             className="row align-items-center justify-content-center "
             style={{ height: "100vh" }}
           >
-            <div className="col-6">
-              <img src="/Images/img-2.png" />
+            <div className=" col-xl-6 col-lg-6 col-sm-12  ">
+              <img src="/Images/img-2.png" className="mobileImg" />
             </div>
-            <div className="col-6">
+            <div className=" col-xl-6 col-lg-6 col-sm-12   ">
               <div>
                 <h1>ONE TOUCH FOR</h1>
                 <h2>ALL NEEDS</h2>
@@ -74,7 +74,7 @@ class Calender extends React.Component {
         <style jsx>{`
           .bg {
             background: aliceblue;
-            height: 100vh;
+          
           }
           .signupBtn {
             background: #56369c;
@@ -84,7 +84,15 @@ class Calender extends React.Component {
           .darkMode {
             background: black;
             color: white;
-            height: 100vh;
+            
+          }
+          @media only screen and (min-width: 414px) and (max-width: 992px) {
+            .mobileImg{
+              width:350px;
+            }
+            .custBtn{
+              font-size:12px;
+            }
           }
         `}</style>
       </>

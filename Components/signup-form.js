@@ -45,10 +45,10 @@ class Registration extends React.Component {
         <div className="row mx-0 ">
           <div className="col-6">
             {mode ? (
-              <img src="/Images/white-mode1.jpg" width="200" height="300" />
+              <img src="/Images/white-mode1.jpg" className="mobileImg" width="200" height="300" />
               
             ) : (
-              <img src="/Images/white-mode.png" width="200" />
+              <img src="/Images/white-mode.png" className="mobileImg1" width="200" />
             )}
           </div>
           <div className="col-6">
@@ -91,7 +91,20 @@ class Registration extends React.Component {
             </form>
           </div>
         </div>
-        <style jsx>{``}</style>
+        <style jsx>{`
+         @media only screen and (min-width: 414px) and (max-width: 992px) {
+          .mobileImg{
+            width:125px;
+          }
+          .mobileImg1{
+            width:150px;
+          }
+          .custBtn{
+            font-size:12px;
+          }
+        }
+        
+        `}</style>
       </>
     );
   }
